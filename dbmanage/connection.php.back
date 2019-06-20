@@ -1,0 +1,15 @@
+<?php
+	//Fields valid, connect to the database
+	$localhost="localhost";
+	$username="cl45-synertst";
+	$password="Ew.VcNW^T";
+	$database="cl45-synertst";
+
+	$link=mysqli_connect($localhost, $username, $password, $database);
+
+	// Check connection
+	if ($link->connect_error) {
+		die("Connection failed: " . $link->connect_error);
+	} 
+		
+?>

@@ -1,0 +1,46 @@
+[18-Sep-2017 20:44:58 America/Denver] PHP Notice:  Uninitialized string offset: 3 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:44:58 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:44:58 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:44:58 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:47:31 America/Denver] PHP Notice:  Uninitialized string offset: 3 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:47:31 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:47:31 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:47:31 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:53:52 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:53:52 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:54:10 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:54:10 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:54:26 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 20:54:26 America/Denver] PHP Notice:  Uninitialized string offset: 2 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 21:24:19 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:25:17 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:25:17 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:25:43 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:25:43 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:25:56 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:25:56 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:26:45 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:26:45 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:27:37 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:27:37 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:27:49 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:27:49 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 23
+[18-Sep-2017 21:28:34 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:30:30 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:31:26 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:32:56 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:33:28 America/Denver] PHP Notice:  Undefined variable: POST in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 8
+[18-Sep-2017 21:43:45 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 21
+[18-Sep-2017 21:43:45 America/Denver] PHP Notice:  Uninitialized string offset: 3 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 21:43:45 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 21:43:45 America/Denver] PHP Notice:  Undefined variable: keys in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/cifrar1.php on line 22
+[18-Sep-2017 21:44:15 America/Denver] PHP Notice:  Uninitialized string offset: 3 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 21:44:15 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 142
+[18-Sep-2017 21:48:28 America/Denver] PHP Notice:  Uninitialized string offset: 3 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 144
+[18-Sep-2017 21:48:28 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 144
+[18-Sep-2017 21:48:43 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 144
+[18-Sep-2017 21:49:59 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 144
+[18-Sep-2017 21:51:17 America/Denver] PHP Parse error:  syntax error, unexpected '{', expecting ')' in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 27
+[18-Sep-2017 21:51:23 America/Denver] PHP Parse error:  syntax error, unexpected '{', expecting ')' in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 27
+[18-Sep-2017 21:51:40 America/Denver] PHP Parse error:  syntax error, unexpected '{', expecting ')' in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 27
+[18-Sep-2017 21:52:05 America/Denver] PHP Notice:  Uninitialized string offset: 4 in /home1/bmdhostc/public_html/syner/Medikapp/rsa/rsa-2007-09-18/rsa.class.php on line 144

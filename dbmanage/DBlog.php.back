@@ -1,0 +1,248 @@
+<?php
+	session_start();
+
+	if($_GET["logout"]==1 AND $_SESSION['id']) {session_destroy();		
+		$message = "You've been logged out, have a nice day";	
+	}
+	
+	include("connection.php");
+	
+	//DB connection
+	if( mysqli_connect_error()){					
+		echo mysqli_connect_error();
+		die;//die "Could not connect to server";//mysqli_connect_error();
+	}			
+	else{//If DB connection is succesful	
+		if ($_POST['guardarcita']){
+			
+		}
+		
+		if ($_POST['guardarcita']){//Submit button clicked
+			//$email=$_POST['email'];
+			//$padecimientos=$_POST['padecimientos'];
+      //$alergias=$_POST['alergias'];
+      //$adicciones=$_POST['adicciones'];
+      //$actfisica=$_POST['actfisica'];
+      //$hisotria_fam=$_POST['hisotria_fam'];
+			$hechos = $_POST['hechos'];//$_POST['hechos'];
+			$sintomas = $_SESSION['sintomas'];//$_POST['sintomas'];
+			$peso = $_POST['peso'];
+			$temp = $_POST['temp'];
+			$fc = $_POST['fc'];
+			$fr = $_POST['fr'];
+			$ta = $_POST['ta'];
+			$auscultacion = $_POST['auscultacion'];
+			$diagnostico = $_POST['diagnostico'];
+			$_SESSION['diagnostico'];
+			//$tx_inicio = $_POST['tx_inicio'];
+			//$tx_fin = $_POST['tx_fin'];
+			$orden_de_estudios = $_POST['ordenestudios'];
+			$tipo_de_analisis = $_POST['tipodeestudio'];
+			$estudios = $_POST['orden_lab_img_elect'];
+			
+		
+			
+			//Validate fields
+      
+      //Insert
+			//$query = "INSERT INTO `tbl_detalles_cita` (`id_cita`, `hechos`, `sintomas`, `peso`, `temp`, `fc`, `fr`, `ta`, `auscultacion`, `diagnostico`, `tx_inicio`, `tx_fin`)";
+			//$query = $query." VALUES ('".$_SESSION['idCita']."', '".$hechos."', '".$sintomas."', '".$peso."', '".$temp."', '".$fc."', '".$fr."', '".$ta."','".$auscultacion."', '".$diagnostico."', '".$tx_inicio."', '".$tx_fin."')";
+
+			$query = "INSERT INTO `tbl_detalles_cita` (`id_cita`, `hechos`, `sintomas`, `peso`, `temp`, `fc`, `fr`, `ta`, `auscultacion`, `diagnostico`, `orden_lab_img_elect`)";
+			$query = $query." VALUES ('".$_SESSION['idCita']."', '".$hechos."', '".$sintomas."', '".$peso."', '".$temp."', '".$fc."', '".$fr."', '".$ta."','".$auscultacion."', '".$diagnostico."', '".$estudios."')";			
+			
+			mysqli_query($link, $query);
+			
+			
+			//guardar detalles estudios
+			if($orden_de_estudios == "1"){
+					$query = "INSERT INTO `tbl_ordenes_lab` (`id_cita`, `tipo_de_analisis`, `especificaciones_del_medico`)";
+					$query = $query." VALUES ('".$_SESSION['idCita']."', '".$tipo_de_analisis."', '".$estudios."')";			
+			
+					mysqli_query($link, $query);
+			}
+			/*
+
+			/*
+INSERT INTO `historial` (`id_historial`, `id`, `padecimientos`, `alergias`, `adicciones`, `ejercicio`, `hisotria_fam`) 
+VALUES (NULL, '96', 'no', 'no', 'no', 'no', 'no');
+			*/
+
+			/*
+      $query = "INSERT INTO `historial`(`id`,`padecimientos`, `alergias`, `adicciones`, `ejercicio`, `hisotria_fam`)";
+      $query = "VALUES ('".$_SESSION['id']."','".$padecimientos."','".$alergias."','".$ejercicio."','".$hisotria_fam."')";
+			*/
+//$query = "INSERT INTO `historial` (`id`, `padecimientos`, `alergias`, `adicciones`, `ejercicio`, `hisotria_fam`)";
+//$query = $query." VALUES ('".$_SESSION['id']."', '".$padecimientos."', '".$alergias."', '".$adicciones."', '".$actfisica."', '".$hisotria_fam."')";			
+			
+			
+      //mysqli_query($link, $query);
+      $message = "Tratamiento registrado ";
+			//echo "<a href='mainperfilpaciente.php' class='btn btn-info' role='button'> Regresar a Perfil</a>";
+			
+			
+			
+			
+			header("Location:agregar_tratamiento.php");
+			}//guardarcita
+
+		else{
+			if ($_POST['guardartratamiento']){
+					//Crear el tratamiento
+					//$query = "INSERT INTO `tbl_tratamientos`(`id_cita`) VALUES (".$_SESSION['idCita'].")";
+					//$query = "INSERT INTO tbl_tratamientos(id_cita,id_usuario) VALUES (".$_SESSION['idCita'].", ".$_SESSION['id'].")";
+			//Registro paciente
+					$query="SELECT id_usuario FROM citas WHERE `id_cita` = '".$_SESSION['idCita']."'";
+					$result = mysqli_query($link, $query);
+
+					$row = $result->fetch_assoc();
+					$paciente = $row['id_usuario'];
+				
+					$notas = "Tratamiento para tratar: ".$_SESSION['diagnostico'];
+				  $query = "INSERT INTO tbl_tratamientos(id_cita,id_usuario, id_estatus_tratamiento, notas) ";
+					$query = $query."VALUES (".$_SESSION['idCita'].", ".$paciente.", 1,'".$notas."')";
+					mysqli_query($link, $query);
+				
+					//Obtener el ID del tratamiento
+					$query="SELECT id_tratamiento FROM tbl_tratamientos WHERE `id_cita` = '".$_SESSION['idCita']."'";
+					$result = mysqli_query($link, $query);
+
+					$row = $result->fetch_assoc();
+					$idtratamiento = $row['id_tratamiento'];
+
+							if($_POST['med1'] != '')
+							{
+								$tipo = $_POST['tipo1'];
+								$med = $_POST['med1'];
+								$cant = $_POST['cant1'];
+								$horario = $_POST['horario1'];
+								$txinicio = $_POST['txinicio1'];
+								$txfin = $_POST['txinicio1'];
+								//agregar_tratamiento($idtratamiento, $tipo, $med, $cant, $horario);
+								
+								/*
+$query = "INSERT INTO `cl45-synertst`.`tbl_detalles_tratamiento` (`id_tratamiento`, `partida`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)
+$query = $query."VALUES (\'52\', \'1\', \'ibuprofeno 500\', \'1\', \'1\', \'8\', \'2016-08-03\', \'2016-08-10\', \'1\');";								
+								*/
+								
+								//$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`)";
+								$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)";
+								//$query = $query." VALUES ('".$idtratamiento."', '".$tipo."', '".$med."', '".$cant."', '".$horario."')";
+								$query = $query." VALUES ('".$idtratamiento."', '".$med."', '".$tipo."', '".$cant."', '".$horario."', '".$txinicio."', '".$txfin."', '1')";
+
+								mysqli_query($link, $query);
+					
+							}					
+				
+							if($_POST['med2'] != '')
+							{
+								$tipo = $_POST['tipo2'];
+								$med = $_POST['med2'];
+								$cant = $_POST['cant2'];
+								$horario = $_POST['horario2'];
+								$txinicio = $_POST['txinicio2'];
+								$txfin = $_POST['txinicio2'];
+								
+								//agregar_tratamiento($idtratamiento, $tipo, $med, $cant, $horario);
+								$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)";
+								//$query = $query." VALUES ('".$idtratamiento."', '".$tipo."', '".$med."', '".$cant."', '".$horario."')";
+								$query = $query." VALUES ('".$idtratamiento."', '".$med."', '".$tipo."', '".$cant."', '".$horario."', '".$txinicio."', '".$txfin."', '1')";
+
+								mysqli_query($link, $query);
+					
+							}				
+
+							if($_POST['med3'] != '')
+							{
+								$tipo = $_POST['tipo3'];
+								$med = $_POST['med3'];
+								$cant = $_POST['cant3'];
+								$horario = $_POST['horario3'];
+								$txinicio = $_POST['txinicio3'];
+								$txfin = $_POST['txinicio3'];
+								
+								//agregar_tratamiento($idtratamiento, $tipo, $med, $cant, $horario);
+								$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)";
+								//$query = $query." VALUES ('".$idtratamiento."', '".$tipo."', '".$med."', '".$cant."', '".$horario."')";
+								$query = $query." VALUES ('".$idtratamiento."', '".$med."', '".$tipo."', '".$cant."', '".$horario."', '".$txinicio."', '".$txfin."', '1')";
+
+								mysqli_query($link, $query);
+					
+							}				
+
+							if($_POST['med4'] != '')
+							{
+								$tipo = $_POST['tipo4'];
+								$med = $_POST['med4'];
+								$cant = $_POST['cant4'];
+								$horario = $_POST['horario4'];
+								$txinicio = $_POST['txinicio4'];
+								$txfin = $_POST['txinicio4'];
+								
+								//agregar_tratamiento($idtratamiento, $tipo, $med, $cant, $horario);
+								$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)";
+								//$query = $query." VALUES ('".$idtratamiento."', '".$tipo."', '".$med."', '".$cant."', '".$horario."')";
+								$query = $query." VALUES ('".$idtratamiento."', '".$med."', '".$tipo."', '".$cant."', '".$horario."', '".$txinicio."', '".$txfin."', '1')";
+
+								mysqli_query($link, $query);
+					
+							}
+				
+							if($_POST['med5'] != '')
+							{
+								$tipo = $_POST['tipo5'];
+								$med = $_POST['med5'];
+								$cant = $_POST['cant5'];
+								$horario = $_POST['horario5'];
+								$txinicio = $_POST['txinicio5'];
+								$txfin = $_POST['txinicio5'];
+								
+								//agregar_tratamiento($idtratamiento, $tipo, $med, $cant, $horario);
+								$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`, `tx_inicio`, `tx_fin`, `id_estatus_tratamiento`)";
+								//$query = $query." VALUES ('".$idtratamiento."', '".$tipo."', '".$med."', '".$cant."', '".$horario."')";
+								$query = $query." VALUES ('".$idtratamiento."', '".$med."', '".$tipo."', '".$cant."', '".$horario."', '".$txinicio."', '".$txfin."', '1')";
+
+								mysqli_query($link, $query);
+					
+							}				
+							//update estatus de la cita
+							$query = "UPDATE `citas` SET status_cita = 2 WHERE id_cita = ".$_SESSION['idCita'];
+							mysqli_query($link, $query);
+
+							//update estatus de la cita
+							//$query = "UPDATE tbl_tratamientos SET id_estatus_tratamiento = 5 WHERE id_tratamiento = ".$idtratamiento;
+							//mysqli_query($link, $query);
+				
+							
+
+				
+							$message = "Tratamiento agregado ";
+        		}
+//$order_desc = "abc";
+//$order_qty = 3;
+//$order_unit_prc = 2;
+//$order_amt = 1;
+				
+//$query = "INSERT INTO `tbl_detalles_tratamiento` (`id_tratamiento`, `medicamento`, `tipo`, `cantidad`, `hora`)";
+//$query = $query." VALUES ('".$idtratamiento."', '".$order_desc."', '".$order_qty."', '".$order_unit_prc."', '".$order_amt."')";				
+
+//mysqli_query($link, $query);				
+				
+//$query = "INSERT INTO `tbl_detalles_tratamiento` (`partida`, `medicamento`, `tipo`, `cantidad`, `hora`)";
+//$query = $query." VALUES ('".$_SESSION['idCita']."', '".$hechos."', '".$sintomas."', '".$temp."', '".$fc."', '".$fr."', '".$ta."','".$auscultacion."', '".$diagnostico."', '".$tx_inicio."', '".$tx_fin."')";				
+
+//mysqli_query($link, $query);				
+				
+				//actualizar tabla de citas con el tratamiento
+				
+				//actualizar tbl citas (atendiendida)
+				
+				
+				//$message = "Meds: ".count($_POST['order_desc'])." Cita atendida, tratamiento agregado";
+				//header("Location:atendercitadisplay.php");
+			}//
+			
+			
+		}//Submit
+
+?>
